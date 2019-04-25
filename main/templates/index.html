@@ -3,12 +3,38 @@
     <head>
         <meta charset="utf-8">
         <title>Howdy!</title>
+        <script>
+            function getPhotoGivenBreed(){
+            console.log("ciao");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(JSON.parse(xhttp.response)["message"])
+                        var url = JSON.parse(xhttp.response)["message"][0]
+                        document.getElementById("test").src = url;
+                    }
+                };
+                xhttp.open("GET", "https://dog.ceo/api/breed/hound/images", true);
+                xhttp.send();
+            }
+        </script>
+
     </head>
     <body>
         <div class="center-main-div">
             <h1 class="main-title">
                 Holidog API test page
             </h1>
+
+            <button onclick="getPhotoGivenBreed()">Fetch!</button>
+            <div>
+                <img id="test" src="">
+
+            </div>
+
         </div>
+
+
+
     </body>
 </html>
