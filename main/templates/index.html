@@ -4,6 +4,25 @@
         <meta charset="utf-8">
         <title>Howdy!</title>
         <script>
+            function getBreedData(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if (this.readyState == 4 && this.status == 200) {
+                        var data = JSON.parse(xhttp.response)["message"]
+                        var names = Object.entries(data)
+                        names.forEach(function(el){
+                            var ul = document.getElementById("breeds-list")
+                            var li = document.createElement("li")
+                            li.innerHTML = "<button class=' breed-button'>" + el[0] + "</button>";
+                            console.log(el[0])
+                            ul.appendChild(li)
+                        });
+                    }
+                }
+                xhttp.open("GET", "https://dog.ceo/api/breeds/list/all", true);
+                xhttp.send();
+            }
+
             function getPhotoGivenBreed(){
             console.log("ciao");
                 var xhttp = new XMLHttpRequest();
@@ -11,17 +30,23 @@
                     if (this.readyState == 4 && this.status == 200) {
                         console.log(JSON.parse(xhttp.response)["message"])
                         var url = JSON.parse(xhttp.response)["message"][0]
-                        document.getElementById("test").src = url;
+                        //document.getElementById("test").src = url;
                     }
                 };
-                xhttp.open("GET", "https://dog.ceo/api/breed/hound/images", true);
+                xhttp.open("GET", "https://dog.ceo/api/breeds/list/all", true);
                 xhttp.send();
             }
         </script>
 
     </head>
-    <body>
-        <div class="center-main-div">
+    <body onload="getBreedData()">
+        <div class="left-main-div">
+            <ul id="breeds-list">
+
+
+            </ul>
+        </div>
+        <div class="right-main-div">
             <h1 class="main-title">
                 Holidog API test page
             </h1>
@@ -38,3 +63,5 @@
 
     </body>
 </html>
+
+
