@@ -28,6 +28,7 @@ ul{
     line-height: 1.8;
     color: #333;
     font-size: 18px;
+    text-transform:capitalize;
 
     width: 100%;
     display: block;
