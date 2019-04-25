@@ -1,4 +1,41 @@
+body{
+    font-family: 'Karla', monospace;
+    line-height: 1.8;
+    color: #333;
+    font-size: 18px;
+}
+
+li{
+    list-style: none;
+    width: 100%;
+}
+
+ul{
+    width:75%;
+}
+
 .left-main-div{
     float: left;
     width: 25%;
+    background-color: #eee;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+
+.breed-button{
+    font-family: 'Karla', monospace;
+    line-height: 1.8;
+    color: #333;
+    font-size: 18px;
+
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    padding: 5% 10%;
+    text-align: left;
+    text-style: capitalize;
+
 }

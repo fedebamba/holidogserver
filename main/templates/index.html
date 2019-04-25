@@ -9,7 +9,7 @@
         <script>
             function createButton(name){
                 var button = document.createElement("button");
-                button.className += "breed-button ";
+                button.className += "breed-button";
                 button.innerHTML = name;
                 button.onclick = function(){getPhotoGivenBreed(name)}
                 return button;
@@ -59,8 +59,6 @@
             <h1 class="main-title">
                 Holidog API test page
             </h1>
-
-            <button onclick="getPhotoGivenBreed()">Fetch!</button>
             <div>
                 <img id="test" src="">
 
