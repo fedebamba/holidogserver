@@ -3,5 +3,5 @@ from main import views
 
 
 urlpatterns = [
-    url(r'^$', views.HomePageView.as_view()),
+    url(r'^$', views.MainView.as_view()),
 ]
