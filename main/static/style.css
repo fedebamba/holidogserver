@@ -22,6 +22,15 @@ ul{
     overflow-y: scroll;
 }
 
+.right-main-div {
+    padding-left: 30%;
+}
+
+#header{
+    height: 10vh;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1vh;
+}
 
 .breed-button{
     font-family: 'Karla', monospace;
